@@ -97,26 +97,26 @@ class UsersUsers(AbstractUser):
         db_table = 'users_users'
 
 
-class UsersUsersGroups(models.Model):
-    id = models.BigAutoField(primary_key=True)
-    users = models.ForeignKey(UsersUsers, models.DO_NOTHING)
-    group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
+# class UsersUsersGroups(models.Model):
+#     id = models.BigAutoField(primary_key=True)
+#     users = models.ForeignKey(UsersUsers, models.DO_NOTHING)
+#     group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
 
-    class Meta:
-        managed = True
-        db_table = 'users_users_groups'
-        unique_together = (('users', 'group'),)
+#     class Meta:
+#         managed = True
+#         db_table = 'users_users_groups'
+#         unique_together = (('users', 'group'),)
 
 
-class UsersUsersUserPermissions(models.Model):
-    id = models.BigAutoField(primary_key=True)
-    users = models.ForeignKey(UsersUsers, models.DO_NOTHING)
-    permission = models.ForeignKey(AuthPermission, models.DO_NOTHING)
+# class UsersUsersUserPermissions(models.Model):
+#     id = models.BigAutoField(primary_key=True)
+#     users = models.ForeignKey(UsersUsers, models.DO_NOTHING)
+#     permission = models.ForeignKey(AuthPermission, models.DO_NOTHING)
 
-    class Meta:
-        managed = True
-        db_table = 'users_users_user_permissions'
-        unique_together = (('users', 'permission'),)
+#     class Meta:
+#         managed = True
+#         db_table = 'users_users_user_permissions'
+#         unique_together = (('users', 'permission'),)
 
 
 class UsersUsersWords(models.Model):
