@@ -1,7 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
-from users.models import UsersUsers
 
 import json
 

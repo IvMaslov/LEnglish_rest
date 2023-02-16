@@ -1,6 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-from main.models import UsersWords
+from words.models import UsersWords
 
 # Create your models here.
 class Users(AbstractUser):

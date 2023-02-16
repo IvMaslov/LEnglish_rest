@@ -8,19 +8,19 @@ from rest_framework_simplejwt.exceptions import TokenError
 from json.decoder import JSONDecodeError
 from LEnglish_mobile.utils import AuthenticatedMixin, NotAuthenticatedMixin, get_update_user_info
 from .serializers import *
-from .models import UsersUsers
+from .models import Users
 from .exceptions import UserAlreadyExist
 
 
 # Create your views here.
 class UserCreateAPIView(NotAuthenticatedMixin, generics.CreateAPIView):
-	model = UsersUsers
+	model = Users
 	serializer_class = UserSerializer
 
 class UserRetrieveAPIView(AuthenticatedMixin, APIView):
 
 	def initial(self, request, *args, **kwargs):
-		self.model = UsersUsers
+		self.model = Users
 		super().initial(request, *args, **kwargs)
 
 	def get(self, request):

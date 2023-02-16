@@ -1,10 +1,10 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 from datetime import datetime
-from .models import UsersUsers
+from .models import Users
 from .exceptions import UserAlreadyExist
 
-UserModel = UsersUsers
+UserModel = Users
 
 class UserSerializer(serializers.ModelSerializer):
 	password = serializers.CharField(write_only=True)
