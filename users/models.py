@@ -1,19 +1,12 @@
-from django.db import models
 from django.contrib.auth.models import AbstractUser
-from words.models import UsersWords
+from django.db import models
+from main.models import UsersWords
 
-class UsersUsers(AbstractUser):
-    password = models.CharField(max_length=128)
-    last_login = models.DateTimeField(blank=True, null=True)
-    is_superuser = models.BooleanField()
-    username = models.CharField(unique=True, max_length=150)
+# Create your models here.
+class Users(AbstractUser):
     first_name = models.CharField(max_length=150, null=True, blank=True)
     last_name = models.CharField(max_length=150, null=True, blank=True)
-    email = models.CharField(max_length=254)
-    is_staff = models.BooleanField()
-    is_active = models.BooleanField()
-    date_joined = models.DateTimeField()
+    words = models.ManyToManyField(UsersWords)
 
-class UsersUsersWords(models.Model):
-    users = models.ForeignKey(UsersUsers, models.DO_NOTHING)
-    userswords = models.ForeignKey(UsersWords, on_delete=models.CASCADE)
+    def __repr__(self):
+        return "User with name {}".format(self.username)
